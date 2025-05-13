@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Rocket Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Start Screen -->
+    <div id="start_screen" class="start_screen">
+        <div class="start-container">
+            <h1>Space Rocket</h1>
+            <input type="text" id="player_name" placeholder="Введите ваше имя">
+            <div class="difficulty">
+                <input type="radio" id="easy" name="difficulty" value="easy">
+                <label for="easy">Легкий</label>
+                <input type="radio" id="medium" name="difficulty" value="medium" checked>
+                <label for="medium">Средний</label>
+                <input type="radio" id="hard" name="difficulty" value="hard">
+                <label for="hard">Сложный</label>
+            </div>
+            <!-- <button class="start-btn" disabled>Start Game</button> -->
+            <button class="start-btn" id="start_btn" disabled>Начать игру</button>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game_screen">
+        <div class="hud">
+            <div class="timer">Время: <span id="timer">00:00</span></div>
+            <div class="coins">Монеты: <span id="coins">0</span></div>
+            <div class="health-bar">Здоровье: <span id="health">100</span>%</div>
+            <div class="fuel2">Топливо: <span id="fuel">100</span>%</div>
+        </div>
+        <div class="back_timer" id="back_timer_display"><h1 id="back_timer"></h1></div>
+        <div class="rocket" id="rocket"></div>
+        <!-- Objects will be added dynamically -->
+    </div>
+
+    <!-- Pause Screen -->
+    <div id="pause_screen" class="pause_screen hidden">
+        <div class="pause-container">
+            <h2>Пауза</h2>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="game_over_screen" class="game_over_screen hidden">
+        <div class="game-over-container">
+            <h2>Конец игры</h2>
+            <table class="leaderboard">
+                <thead>
+                    <tr>
+                        <th>Ранг</th>
+                        <th>Никнейм</th>
+                        <th>Время</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span>1</span></td>
+                        <td><span id="nick"></span></td>
+                        <td><span id="time_score"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="retry-btn" id="restart_btn">Начать заново</button>
+            <button class="menu-btn" id="menu_btn">Меню</button>
+        </div>
+    </div>
+
+    <!-- Countdown -->
+    <div id="countdown"></div>
+
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
